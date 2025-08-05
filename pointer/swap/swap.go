@@ -2,26 +2,19 @@ package main
 
 import "fmt"
 
-// func swap(x, y int) {
-// 	temp := x
-// 	x = y
-// 	y = temp
-// }
+func changeValue(num int) { // pass by value
+	num = 100
+}
 
-// func main() {
-// 	a, b := 1, 2
-// 	swap(a, b)
-// 	fmt.Println(a, b) // still 1 2
-// }
-
-func swap(x, y *int) {
-	temp := *x
-	*x = *y
-	*y = temp
+func updateVaue(num *int) { // pass by reference
+	*num = 100
 }
 
 func main() {
-	a, b := 1, 2
-	swap(&a, &b)
-	fmt.Println(a, b) // 2 1
+	a := 50
+	changeValue(a)
+	fmt.Println("a =", a) // Output: a = 50
+
+	updateVaue(&a)
+	fmt.Println("a =", a) // Output: a = 100
 }
