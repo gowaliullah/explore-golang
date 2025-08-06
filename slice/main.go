@@ -4,15 +4,33 @@ import "fmt"
 
 func main() {
 
+	var x []int
+
+	x = append(x, 1) // [1], len = 1, cap = 1
+	x = append(x, 2) // [1, 2], len = 2, cap = 2
+	x = append(x, 3) // [1, 2, 3], len = 3, cap = 4
+
+	y := x
+
+	x = append(x, 4)
+	y = append(y, 5)
+
+	x[0] = 10
+
+	fmt.Println("slice: ", x, "Len: ", len(x), "Cap: ", cap(x))
+	fmt.Println("slice: ", y, "Len: ", len(y), "Cap: ", cap(y))
+
 	// empty || nil slice
+	/*
+		var s []int // ptr = nil, len = 0, cap = 0
 
-	var s []int // ptr = nil, len = 0, cap = 0
+		s = append(s, 1)
+		s = append(s, 1)
+		s = append(s, 1)
 
-	s = append(s, 1)
-	s = append(s, 1)
-	s = append(s, 1)
+		fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
 
-	fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
+	*/
 
 	// make() with len && cap
 	/*
@@ -57,3 +75,16 @@ func main() {
 
 	*/
 }
+
+/*
+
+1. slice from existing array
+2. slice from slice a array
+3. slice literal
+4. make function with length
+5. make function with length and capacity
+5. empty or nil slice
+6. slice array underlying array rule --> 1024 -> 100% then 25% increase
+
+
+*/
