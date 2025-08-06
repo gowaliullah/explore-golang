@@ -2,13 +2,19 @@ package main
 
 import "fmt"
 
-func changeSlice(a []int) []int {
-	a[0] = 10
-	a = append(a, 11)
-	return a
+func changeSlice(p []int) []int {
+	p[0] = 10
+	p = append(p, 11)
+	return p
+}
+
+func print(nums ...int) { // variadic func as like spreed in JS
+	fmt.Println("slice: ", nums, "Len: ", len(nums), "Cap: ", cap(nums)) // [10 2 3 5] Len:  4 Cap:  4
 }
 
 func main() {
+
+	// print(1, 2, 3, 4, 5)
 
 	x := []int{1, 2, 3, 4, 5}
 
@@ -21,8 +27,9 @@ func main() {
 
 	fmt.Println(x)
 	fmt.Println(y)
+	fmt.Println(x[0:8])
 
-	// fmt.Println("slice: ", a, "Len: ", len(a), "Cap: ", cap(a)) // [10 2 3 5] Len:  4 Cap:  4
+	// fmt.Println("slice: ", y, "Len: ", len(y), "Cap: ", cap(y)) // [10 2 3 5] Len:  4 Cap:  4
 
 	/*
 		var x []int
