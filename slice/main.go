@@ -4,11 +4,21 @@ import "fmt"
 
 func main() {
 
-	s := make([]int, 3) // [0 0 0 ] cap = 3 len = 3
-
-	s[0] = 5 // [5 0 0 ] cap = 3 len = 3
-
+	// make() with len && cap
+	s := make([]int, 3, 5) // [0 0 0 ] cap = 3 len = 5
+	s[0] = 5
+	s[2] = 4 // [5 0 4 ] cap = 3 len = 5
+	s[3] = 4 //panic: runtime error: index out of range [3] with length 3
 	fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
+
+	// make() with len
+	/*
+		s := make([]int, 3) // [0 0 0 ] cap = 3 len = 3
+		s[0] = 5 // [5 0 0 ] cap = 3 len = 3
+
+		fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
+
+	*/
 
 	// second step of learning slice
 	/*
