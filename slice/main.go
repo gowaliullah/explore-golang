@@ -8,6 +8,10 @@ func main() {
 
 	var s []int // ptr = nil, len = 0, cap = 0
 
+	s = append(s, 1)
+	s = append(s, 1)
+	s = append(s, 1)
+
 	fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
 
 	// make() with len && cap
