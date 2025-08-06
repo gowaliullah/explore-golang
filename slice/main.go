@@ -4,13 +4,21 @@ import "fmt"
 
 func main() {
 
+	s := make([]int, 3) // [0 0 0 ] cap = 3 len = 3
+
+	s[0] = 5 // [5 0 0 ] cap = 3 len = 3
+
+	fmt.Println("slice: ", s, "Len: ", len(s), "Cap: ", cap(s))
+
 	// second step of learning slice
+	/*
+		// arr := [3]int{1, 2, 3}
+		// fmt.Println(arr)
 
-	// arr := [3]int{1, 2, 3}
-	// fmt.Println(arr)
+		slc := []int{1, 2, 3} // slice literal -> S.L. দিয়ে করলে len & cap একই হয়।
+		fmt.Println("slice: ", slc, "Len: ", len(slc), "Cap: ", cap(slc))
 
-	slc := []int{1, 2, 3} // slice literal -> S.L. দিয়ে করলে len & cap একই হয়।
-	fmt.Println("slice: ", slc, "Len: ", len(slc), "Cap: ", cap(slc))
+	*/
 
 	// first step of learing slice
 	/*
