@@ -2,23 +2,46 @@ package main
 
 import "fmt"
 
+func changeSlice(a []int) []int {
+	a[0] = 10
+	a = append(a, 11)
+	return a
+}
+
 func main() {
 
-	var x []int
+	x := []int{1, 2, 3, 4, 5}
 
-	x = append(x, 1) // [1], len = 1, cap = 1
-	x = append(x, 2) // [1, 2], len = 2, cap = 2
-	x = append(x, 3) // [1, 2, 3], len = 3, cap = 4
+	x = append(x, 6)
+	x = append(x, 7)
 
-	y := x
+	a := x[4:]
 
-	x = append(x, 4)
-	y = append(y, 5)
+	y := changeSlice(a)
 
-	x[0] = 10
+	fmt.Println(x)
+	fmt.Println(y)
 
-	fmt.Println("slice: ", x, "Len: ", len(x), "Cap: ", cap(x))
-	fmt.Println("slice: ", y, "Len: ", len(y), "Cap: ", cap(y))
+	// fmt.Println("slice: ", a, "Len: ", len(a), "Cap: ", cap(a)) // [10 2 3 5] Len:  4 Cap:  4
+
+	/*
+		var x []int
+
+		x = append(x, 1) // [1], len = 1, cap = 1
+		x = append(x, 2) // [1, 2], len = 2, cap = 2
+		x = append(x, 3) // [1, 2, 3], len = 3, cap = 4
+
+		y := x
+
+		x = append(x, 4)
+		y = append(y, 5)
+
+		x[0] = 10
+
+		fmt.Println("slice: ", x, "Len: ", len(x), "Cap: ", cap(x)) // [10 2 3 5] Len:  4 Cap:  4
+		fmt.Println("slice: ", y, "Len: ", len(y), "Cap: ", cap(y)) // [10 2 3 5] Len:  4 Cap:  4
+
+	*/
 
 	// empty || nil slice
 	/*
@@ -84,7 +107,7 @@ func main() {
 4. make function with length
 5. make function with length and capacity
 5. empty or nil slice
-6. slice array underlying array rule --> 1024 -> 100% then 25% increase
+6. slice underlying array rule --> 1024 -> 100% then 25% increase
 
 
 */
