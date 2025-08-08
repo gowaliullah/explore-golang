@@ -115,6 +115,9 @@ func main() {
 5. make function with length and capacity
 5. empty or nil slice
 6. slice underlying array rule --> 1024 -> 100% then 25% increase
+7. কেন 1536 এর পরিবর্তে 1280?
+   এটি মূলত Hardware Memory Alignment এর উপর নির্ভর করে।
+   এর পরিবর্তে এটি সিস্টেম মেমরি বরাদ্দের ধরণ অনুযায়ী Optimal Memory Block ব্যবহার করে।
 
 
 */
