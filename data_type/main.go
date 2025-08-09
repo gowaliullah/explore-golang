@@ -16,7 +16,10 @@ func main() {
 	fmt.Println(p, q, z, ha, haa)
 	fmt.Printf("%d\n", p)
 	fmt.Printf("%f\n", z)
+	fmt.Printf("%2f\n", z)
 	fmt.Printf("%c\n", hab)
+	fmt.Printf("%v\n", ha)
+	fmt.Printf("%T\n", hab)
 
 	// byte -> alias for unit8 -> 8 bits -> 1 byte
 
