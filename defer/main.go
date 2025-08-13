@@ -66,23 +66,30 @@ func cal() int {
 
 }
 
-func normalReturn() int {
+func normalReturn() (int, int) {
 
-	result := 0
+	num := 0
 
-	fmt.Println("প্রথম", result) // 0
+	x := 20
+
+	fmt.Println("প্রথম", num) // 0
 
 	sum := func() {
-		result = result + 10
-		fmt.Println("ডিফার", result) // 15
+
+		if x > 5 {
+			x = 30
+		}
+
+		num = num + 10
+		fmt.Println("ডিফার", num) // 15
 	}
 
 	defer sum()
 
-	result = 5
-	fmt.Println("দ্বিতীয়", result) // 5
+	num = 5
+	fmt.Println("দ্বিতীয়", num) // 5
 
-	return result // 5
+	return num, x // 5
 
 }
 
@@ -90,11 +97,18 @@ func namedReturnedValue() (result int) {
 
 	fmt.Println("প্রথম", result) // 0
 
+	x := 20
+
 	sum := func() {
+
+		if x > 5 {
+			x = 30
+		}
+
 		result = result + 10
 		fmt.Println("ডিফার", result) // 15
 	}
-	defer sum()
+	defer sum() // nil
 
 	result = 5
 
@@ -103,9 +117,25 @@ func namedReturnedValue() (result int) {
 	}
 
 	defer p(result)
+
+	/*
+			getAvgSalary := func () int {
+
+			result 11
+		}
+
+
+		defer fmt.Println(1) // 1 -> nil
+		defer fmt.Println(1)
+		defer fmt.Println(1)
+		defer fmt.getAvgSalary(1) // result (11) -> 127
+		defer fmt.Println(1)      // 1 -> 128
+
+	*/
+
 	fmt.Println("দ্বিতীয়", result) // 5
 
-	return
+	return // 15,
 }
 
 func main() {

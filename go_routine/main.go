@@ -13,6 +13,7 @@ func printHello(num int) {
 var p, q int = 10, 20
 
 func main() {
+
 	go printHello(1)
 	go printHello(2)
 	go printHello(3)
