@@ -6,6 +6,7 @@ import (
 )
 
 func printHello(num int) {
+	time.Sleep(5 * time.Second)
 	fmt.Println("Helllo World", num)
 }
 
@@ -19,5 +20,8 @@ func main() {
 
 	fmt.Println(p, " ", q)
 
-	time.Sleep(1 * time.Millisecond)
+	time.Sleep(5 * time.Second)
+
+	fmt.Println("ha....")
+
 }
