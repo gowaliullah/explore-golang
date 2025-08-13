@@ -66,6 +66,26 @@ func cal() int {
 
 }
 
+func normalReturn() int {
+
+	result := 0
+
+	fmt.Println("প্রথম", result) // 0
+
+	sum := func() {
+		result = result + 10
+		fmt.Println("ডিফার", result) // 15
+	}
+
+	defer sum()
+
+	result = 5
+	fmt.Println("দ্বিতীয়", result) // 5
+
+	return result // 5
+
+}
+
 func namedReturnedValue() (result int) {
 
 	fmt.Println("প্রথম", result) // 0
@@ -88,27 +108,7 @@ func namedReturnedValue() (result int) {
 	return
 }
 
-func normalReturn() int {
-
-	result := 0
-
-	fmt.Println("প্রথম", result) // 0
-
-	sum := func() {
-		result = result + 10
-		fmt.Println("ডিফার", result) // 15
-	}
-
-	defer sum()
-
-	result = 5
-	fmt.Println("দ্বিতীয়", result) // 5
-
-	return result // 5
-
-}
-
 func main() {
-	res := normalReturn()                                         // 5
-	fmt.Println("আমি মেইন, আমার ছাড়া কাম হইবো নারে পাগলা..", res) // 0, 5, 15, 5
+	res := namedReturnedValue()                                   // 15
+	fmt.Println("আমি মেইন, আমার ছাড়া কাম হইবো নারে পাগলা..", res) // 0, 5, 5, 15, 15
 }
