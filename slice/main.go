@@ -4,7 +4,7 @@ import "fmt"
 
 func changeSlice(p []int) []int {
 	p[0] = 10
-	p = append(p, 11)
+	p = append(p, 11) // len
 	return p
 }
 
@@ -16,12 +16,12 @@ func main() {
 
 	// print(1, 2, 3, 4, 5)
 
-	x := []int{1, 2, 3, 4, 5}
+	x := []int{1, 2, 3, 4, 5} // len = 5, cap = 5
 
-	x = append(x, 6)
-	x = append(x, 7)
+	x = append(x, 6) // len = 6, cap = 10
+	x = append(x, 7) // len = 7, cap = 10
 
-	a := x[4:]
+	a := x[4:] // // len = 3, cap = 6
 
 	y := changeSlice(a)
 
