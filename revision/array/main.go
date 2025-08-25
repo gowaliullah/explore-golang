@@ -1,18 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
+func forLoop() {
 	nums := [5]int{1, 2, 3, 4, 5}
 
 	fmt.Println("For Loop")
 	for i := 0; i < len(nums); i++ {
 		fmt.Println(i, nums[i])
 	}
+}
 
+func ForLoopWithRange() {
+	nums := [5]int{1, 2, 3, 4, 5}
 	fmt.Println("For Loop with range")
 	for index, value := range nums {
 		fmt.Println(index, value)
 	}
+}
 
+func multidimensionalArray() {
+	matrix := [2][2]int{
+		{1, 2},
+		{4, 5},
+	}
+	fmt.Println(matrix)
+}
+
+func main() {
+	arrayOfArrays()
 }
