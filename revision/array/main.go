@@ -39,12 +39,12 @@ func arrayOfArrays() {
 	fmt.Println(arr)
 }
 
-func modifyArr(arr *[5]int) {
+func modifyArr(arr *[6]int) {
 	arr[0] = 999
 }
 
 func main() {
-	nums := [5]int{1, 2, 3, 4, 5}
+	nums := [6]int{1, 2, 3, 4, 5, 6}
 	modifyArr(&nums)
 	fmt.Println(nums)
 }
