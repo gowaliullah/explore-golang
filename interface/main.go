@@ -21,8 +21,14 @@ func (obj user) PrintDetails() {
 	fmt.Println("Money: ", obj.Money)
 }
 
+func (obj user) ReceivedMoney(amount float64) float64 {
+	obj.Money = obj.Money + amount
+	return obj.Money
+}
+
 func main() {
-	usr1 := user{
+	var usr1 People
+	usr1 = user{
 		Name:  "Hab",
 		Age:   30,
 		Money: 344.423,
