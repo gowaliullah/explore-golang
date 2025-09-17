@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type user struct {
 	Name  string
@@ -61,5 +64,15 @@ func main() {
 	usr2 = user{Name: "Jahed", Age: 23, Money: 88.907}
 
 	usr2.WithdrawMoney(2)
+
+	obj, ok := usr2.(user)
+	if !ok {
+		fmt.Println("Sorry..! usr2 is not type of user struct")
+		os.Exit(1)
+	}
+
+	obj.PrintDetails()
+	obj.ReceivedMoney(2)
+	obj.WithdrawMoney(2)
 
 }
