@@ -36,6 +36,7 @@ func (obj user) WithdrawMoney(amount float64) float64 {
 }
 
 func main() {
+
 	var usr1 People
 	usr1 = user{
 		Name:  "Hab",
@@ -44,4 +45,11 @@ func main() {
 	}
 	usr1.PrintDetails()
 	usr1.ReceivedMoney(100)
+
+	var usr2 BankUser
+
+	usr2 = user{Name: "Jahed", Age: 23, Money: 88.907}
+
+	usr2.WithdrawMoney(2)
+
 }
