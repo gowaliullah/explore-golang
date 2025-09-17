@@ -37,6 +37,16 @@ func (obj user) WithdrawMoney(amount float64) float64 {
 
 func main() {
 
+	usr := user{
+		Name:  "Rezwan",
+		Age:   3,
+		Money: 200.896,
+	}
+
+	usr.PrintDetails()
+	usr.ReceivedMoney(2)
+	usr.WithdrawMoney(2)
+
 	var usr1 People
 	usr1 = user{
 		Name:  "Hab",
