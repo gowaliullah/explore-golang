@@ -21,4 +21,16 @@ func main() {
 	val2 := s1["page"]
 
 	fmt.Println(val2)
+
+	// as like pagination
+
+	page := []string{"1", "2", "3", "4", "5"}
+	limit := []string{"10", "20", "30"}
+
+	params := map[string][]string{
+		"page":  page,
+		"limit": limit,
+	}
+	fmt.Println(params)
+
 }
