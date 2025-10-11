@@ -1,17 +1,33 @@
 package main
 
 import (
+	"crypto/hmac"
 	"crypto/sha256"
 	"fmt"
 )
 
 func main() {
 
-	data := []byte("Hello")
+	secret := []byte("my-secret")
+	msg := []byte("Hello World")
 
-	hash := sha256.Sum256(data)
+	h := hmac.New(sha256.New, secret)
 
-	fmt.Println(hash)
+	h.Write(msg)
+
+	text := h.Sum(nil)
+
+	fmt.Println(text)
+
+	/*
+
+		data := []byte("Hello")
+
+		hash := sha256.Sum256(data)
+
+		fmt.Println(hash)
+
+	*/
 
 	/*
 		s := "098fg"
