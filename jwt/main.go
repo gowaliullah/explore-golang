@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"encoding/base64"
+	"fmt"
+)
 
 func main() {
-	s := "a"
+	s := "098fg"
 
 	byteArr := []byte(s)
 
-	fmt.Println(byteArr)
+	enc := base64.URLEncoding.WithPadding(base64.NoPadding)
+	str := enc.EncodeToString(byteArr)
+
+	fmt.Println(str)
 
 }
