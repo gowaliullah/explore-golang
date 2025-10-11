@@ -11,8 +11,15 @@ func main() {
 	byteArr := []byte(s)
 
 	enc := base64.URLEncoding.WithPadding(base64.NoPadding)
-	str := enc.EncodeToString(byteArr)
+	b64str := enc.EncodeToString(byteArr)
 
-	fmt.Println(str)
+	decodedStr, err := enc.DecodeString(b64str)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(b64str)
+	fmt.Println(decodedStr)
 
 }
